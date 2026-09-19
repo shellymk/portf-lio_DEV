@@ -1,0 +1,10 @@
+# nunca versionar arquivos pessoais
+imagens/
+*.pdf
+Curriculo*
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+.angular/

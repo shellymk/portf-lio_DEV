@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Sheila Macedo — Desenvolvedora Full Stack</title>
+<meta name="description" content="Portfólio de Sheila Macedo, desenvolvedora full stack em JavaScript e TypeScript. Em reconstrução." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Spectral:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --tinta:#0b0a0f;
+    --tinta-2:#141119;
+    --brasa:#c9893f;
+    --brasa-clara:#e8b871;
+    --pergaminho:#d9cfc0;
+    --pergaminho-fraco:#8e8579;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; min-height:100vh;
+    background:var(--tinta);
+    color:var(--pergaminho);
+    font-family:"Spectral",Georgia,serif;
+    display:grid; place-items:center;
+    padding:32px 20px;
+    overflow-x:hidden;
+  }
+  /* brasa respirando ao fundo */
+  .aura{
+    position:fixed; inset:0; pointer-events:none; z-index:0;
+    background:
+      radial-gradient(60vmax 60vmax at 50% 42%, rgba(201,137,63,.13), transparent 62%),
+      radial-gradient(40vmax 40vmax at 78% 82%, rgba(201,137,63,.06), transparent 60%);
+    animation:respirar 7s ease-in-out infinite;
+  }
+  @keyframes respirar{0%,100%{opacity:.75}50%{opacity:1}}
+  /* grão sutil de pergaminho */
+  .grao{
+    position:fixed; inset:0; pointer-events:none; z-index:1; opacity:.05;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='r'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/></filter><rect width='120' height='120' filter='url(%23r)'/></svg>");
+  }
+  main{position:relative; z-index:2; text-align:center; max-width:640px;}
+  .selo{
+    width:74px; height:74px; margin:0 auto 34px;
+    display:block;
+  }
+  .selo circle,.selo path{transform-origin:center;}
+  .selo .anel{animation:girar 26s linear infinite;}
+  @keyframes girar{to{transform:rotate(360deg)}}
+  .marca{
+    font-family:"Cinzel",Georgia,serif;
+    font-size:clamp(28px,6.2vw,46px);
+    font-weight:700; letter-spacing:.14em;
+    margin:0 0 6px; color:#f3ece1;
+    text-transform:uppercase;
+  }
+  .oficio{
+    font-family:"Cinzel",Georgia,serif;
+    font-size:clamp(11px,2.4vw,13px);
+    letter-spacing:.34em; text-transform:uppercase;
+    color:var(--brasa); margin:0 0 30px;
+  }
+  .linha{
+    width:100%; max-width:230px; height:1px; margin:0 auto 30px;
+    background:linear-gradient(90deg,transparent,var(--brasa),transparent);
+    opacity:.55;
+  }
+  .recado{
+    font-size:clamp(15px,3vw,17.5px); line-height:1.75;
+    color:var(--pergaminho-fraco); margin:0 auto 38px; max-width:45ch;
+  }
+  .recado em{color:var(--brasa-clara); font-style:italic;}
+  .elos{display:flex; gap:12px; justify-content:center; flex-wrap:wrap;}
+  .elo{
+    font-family:"Cinzel",Georgia,serif;
+    font-size:12px; letter-spacing:.17em; text-transform:uppercase;
+    color:var(--pergaminho); text-decoration:none;
+    padding:13px 26px; border:1px solid rgba(201,137,63,.36);
+    border-radius:2px; background:rgba(201,137,63,.05);
+    transition:background .28s ease, border-color .28s ease, color .28s ease;
+  }
+  .elo:hover,.elo:focus-visible{
+    background:rgba(201,137,63,.16);
+    border-color:var(--brasa);
+    color:#fff;
+  }
+  footer{
+    margin-top:46px; font-size:11.5px; letter-spacing:.2em;
+    text-transform:uppercase; color:#4a4550;
+    font-family:"Cinzel",Georgia,serif;
+  }
+  @media (prefers-reduced-motion:reduce){
+    .aura,.selo .anel{animation:none;}
+  }
+</style>
+</head>
+<body>
+  <div class="aura"></div>
+  <div class="grao"></div>
+
+  <main>
+    <svg class="selo" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <circle class="anel" cx="50" cy="50" r="42" stroke="#c9893f" stroke-width="1"
+              stroke-dasharray="5 9" opacity=".65"/>
+      <circle cx="50" cy="50" r="31" stroke="#c9893f" stroke-width="1" opacity=".45"/>
+      <path d="M50 27 L68 50 L50 73 L32 50 Z" stroke="#e8b871" stroke-width="1.4"
+            stroke-linejoin="round"/>
+      <circle cx="50" cy="50" r="5" fill="#c9893f" opacity=".85"/>
+    </svg>
+
+    <h1 class="marca">Sheila Macedo</h1>
+    <p class="oficio">Desenvolvedora Full&nbsp;Stack</p>
+
+    <div class="linha"></div>
+
+    <p class="recado">
+      Este portfólio está sendo <em>forjado de novo</em> — do zero,
+      e desta vez à altura do que foi construído.
+    </p>
+
+    <nav class="elos">
+      <a class="elo" href="https://github.com/shellymk" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a class="elo" href="https://www.linkedin.com/in/shellymacedo/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </nav>
+
+    <footer>Salvador · Bahia · Brasil</footer>
+  </main>
+</body>
+</html>
